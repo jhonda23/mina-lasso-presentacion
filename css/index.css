@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.1), 
+            rgba(0, 0, 0, 0.1)
+        ),
+        url('../images/fondo_electoral/fondo.jpg');
+    background-size: cover;
+    background-position:auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Fondo difuminado */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+.start-container {
+    text-align: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0); /* Transparente */
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.355);
+    max-width: 500px;
+    width: 90%;
+    animation: fadeIn 1s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    opacity: 0.95;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.start-button {
+    background: linear-gradient(45deg, rgb(255, 247, 0), rgba(0, 119, 255, 0.415), rgb(255, 0, 0));
+    color: #02003c;
+    border: none;
+    padding: 18px 50px;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    display: inline-block;
+    text-decoration: none;
+    
+    backdrop-filter: blur(10px);
+}
+
+.start-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
+    background: linear-gradient(45deg, rgba(255, 215, 0, 0.9), rgba(255, 107, 0, 0.9));
+}
+
+.instructions {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .start-button {
+        padding: 15px 40px;
+        font-size: 1.1rem;
+    }
+    
+    .start-container {
+        padding: 30px 20px;
+    }
+}
